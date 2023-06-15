@@ -1,22 +1,15 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Cart from '../components/index'
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-} from '@apollo/client'
-
-const inter = Inter({ subsets: ['latin'] })
-
-const client = new ApolloClient({
-  uri: 'https://flyby-router-demo.herokuapp.com/',
-  cache: new InMemoryCache(),
-})
+import Cart from '../components/PokeCart/index'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 export default function Home() {
+
+  const client = new ApolloClient({
+    uri: 'https://graphql-pokeapi.graphcdn.app/',
+    cache: new InMemoryCache(),
+  })
+
   return (
     <>
       <Head>
@@ -33,11 +26,14 @@ export default function Home() {
             alt="Logo"
           />
         </div>
+
         <div className="App">
-          <Cart />
-          
+          <ApolloProvider client={client}>
+            <Cart />
+          </ApolloProvider>
         </div>
       </main>
     </>
   )
 }
+
