@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import Cart from '../components/PokeCart/index'
+import Card from '../components/PokeCart/index'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 export default function Home() {
@@ -29,8 +29,8 @@ export default function Home() {
 
         <div className="App">
           <ApolloProvider client={client}>
-            <Cart />
-          </ApolloProvider>
+            <Card />
+          </ApolloProvider> 
         </div>
       </main>
     </>

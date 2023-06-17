@@ -19,7 +19,7 @@ const UrlDePokes = gql`
   }
 `
 
-const Cart = () => {
+const Card = () => {
   const { loading, error, data } = useQuery(UrlDePokes)
 
   if (loading) {
@@ -28,17 +28,25 @@ const Cart = () => {
     return <p>Error: {error.message}</p>
   }
 
+  const Alert = () => {
+    alert(`Haz hecho click en el boton de: {pokemon.name}`) 
+  }
+
+  function capitalizeFirstLetter(str: any) {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
   return (
     <div className="Container">
       {data.pokemons.results.map((pokemon: any) => (
         <div key={pokemon.id} className="Card">
           <div className="CardInfo">
             <p>
-              <b>{pokemon.name}</b>
+              <b>{pokemon.name.toUpperCase()}</b>
             </p>
             <img className="PokeImg" src={pokemon.image} alt={pokemon.name} />
-            <button className="Button">
-              Ver info de <b>{pokemon.name}</b>
+            <button className="Button" onClick={Alert}>
+              Ver info de: <b>{capitalizeFirstLetter(pokemon.name)}</b>
             </button>
             <p>{pokemon.id}</p>
           </div>
@@ -48,4 +56,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Card

@@ -33,7 +33,7 @@ body {
 }
 
 .Card {
-    border: solid 2px rgb(138, 137, 137);
+    border: solid 2px rgb(216, 213, 213);
     border-radius: 15px;
     background-color: rgb(237, 237, 237);
     display: flex;
@@ -43,6 +43,11 @@ body {
     flex-direction: column;
     margin: 20px;
 } 
+
+.Card:hover {
+    border: solid 2px rgb(131, 130, 130);
+    background-color: rgb(225, 220, 220);
+}
 
 .CardInfo {
     display: flex;
@@ -57,8 +62,9 @@ body {
 .Button {
     padding: 12px 18px;
     border-radius: 30px ;
-    border: solid 1px rgb(56, 56, 56);;
+    border: solid 1px rgb(56, 56, 56);
 }
+
 
 .Button:hover {
     background: rgb(20, 115, 165);
