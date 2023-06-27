@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
-import Card from '../components/PokeCart/index'
+import Card from '../components/Card/index'
+import InfoScreen from '@/components/InfoScreen'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 export default function Home() {
@@ -30,10 +30,16 @@ export default function Home() {
         <div className="App">
           <ApolloProvider client={client}>
             <Card />
-          </ApolloProvider> 
+          </ApolloProvider>
+        </div>
+
+     {/* Pantalla info de pokemon  */}
+        <div>
+          <InfoScreen />
         </div>
       </main>
     </>
   )
 }
+
 
