@@ -12,7 +12,8 @@ body {
 .PokeLogo {
     height: 70px;
     margin-bottom: 25px;
-    margin-top: 25px;
+    margin-top: 5px;
+    
 }
 
 .App {

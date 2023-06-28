@@ -28,9 +28,9 @@ export default function Home() {
         </div>
 
         <div className="App">
-          <ApolloProvider client={client}>
+          {/* <ApolloProvider client={client}>
             <Card />
-          </ApolloProvider>
+          </ApolloProvider> */}
         </div>
 
      {/* Pantalla info de pokemon  */}
