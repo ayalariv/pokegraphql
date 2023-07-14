@@ -116,6 +116,6 @@ const InfoScreen = () => {
     </div>
   )
 }
-
+// Hola Que tal
 
 export default InfoScreen
