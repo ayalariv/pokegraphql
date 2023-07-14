@@ -18,7 +18,7 @@ const Habilidades = ({ abilities }: { abilities: Ability[] }) => {
       <div className={Style.Izquierda}>
         <p className={Style.descripcion}>SKILLS</p>
         {abilities.map((ability: any) => (
-          <p key={ability.ability.name}>{ability.ability.name}...</p>
+          <p key={ability.ability.name}>{ability.ability.name}</p>
         ))}
       </div>
     </div>
@@ -116,5 +116,6 @@ const InfoScreen = () => {
     </div>
   )
 }
+
 
 export default InfoScreen
