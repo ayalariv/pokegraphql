@@ -2,49 +2,45 @@ import React from 'react'
 import Style from '@/components/InfoScreen/styles.module.css'
 import { ApolloClient, InMemoryCache, gql, useQuery } from '@apollo/client'
 
-
 const client = new ApolloClient({
   uri: 'https://graphql-pokeapi.vercel.app/api/graphql',
   cache: new InMemoryCache(),
-}) 
+})
 
-  type Ability = {
-    ability: {
-      name: string
-    }
+type Ability = {
+  ability: {
+    name: string
   }
-  const Habilidades = ({ abilities }: { abilities: Ability[] }) => {
-    return (
-      <div>
-        <div className={Style.Izquierda}>
-          <p className={Style.descripcion}>SKILLS</p>
-          {abilities.map((ability: any) => (
-            <p key={ability.ability.name}>{ability.ability.name}</p>
-          ))}
-        </div>
+}
+const Habilidades = ({ abilities }: { abilities: Ability[] }) => {
+  return (
+    <div>
+      <div className={Style.Izquierda}>
+        <p className={Style.descripcion}>SKILLS</p>
+        {abilities.map((ability: any) => (
+          <p key={ability.ability.name}>{ability.ability.name}...</p>
+        ))}
       </div>
-    )
-  }
-  
+    </div>
+  )
+}
+
 type Move = {
   move: {
     name: string
   }
 }
 
-
-
 const Movimiento = ({ moves }: { moves: Move[] }) => {
- return (
-   <p className={Style.movimientoos}>
-     MOVE
-     {moves.map((move: any) => (
-       <p key={move.move.name}>{move.move.name}</p>
-     ))}
-   </p>
- )
+  return (
+    <p className={Style.movimientoos}>
+      MOVE
+      {moves.map((move: any) => (
+        <p key={move.move.name}>{move.move.name}</p>
+      ))}
+    </p>
+  )
 }
-
 
 const InfoScreen = () => {
   const { loading, error, data } = useQuery(
