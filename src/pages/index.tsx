@@ -3,6 +3,8 @@ import Card from '../components/Card/index'
 import InfoScreen from '@/components/InfoScreen'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
+
+
 export default function Home() {
 
   const client = new ApolloClient({
@@ -19,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="ContainerTitle">
+        <div className="ContainerTitle" >
           <img
             className="PokeLogo"
             src="https://pokemon-web-app.web.app/static/media/logo.4e120cee.svg"
@@ -28,15 +30,16 @@ export default function Home() {
         </div>
 
         <div className="App">
+          <ApolloProvider client={client}>
+            <InfoScreen />
+          </ApolloProvider> 
           {/* <ApolloProvider client={client}>
             <Card />
           </ApolloProvider> */}
         </div>
 
-     {/* Pantalla info de pokemon  */}
-        <div>
-          <InfoScreen />
-        </div>
+        {/* Pantalla info de pokemon  */}
+        <div></div>
       </main>
     </>
   )

@@ -20,6 +20,7 @@ const PokeQuery = gql`
   }
 ` 
 
+
 const Card = () => {
   //Alerta que aparece al dar click en boton de "Ver info"
   const Alert = () => {
